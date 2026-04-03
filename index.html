@@ -97,10 +97,9 @@
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({ question: userQ })
                 });
-
-                const data = await res.json();
-                document.getElementById('loading').remove();
-                resDiv.innerHTML += `<p>● الشيخ: ${data.answer}</p><hr style="opacity:0.1">`;
+                const data = await response.json();
+                   // اتأكد إنها data.reply مش data.response
+                       addMessage('bot', data.reply);
             } catch (e) {
                 document.getElementById('loading').innerText = "عذراً يا بني، حدث تداخل في الأفكار.";
             } finally {
