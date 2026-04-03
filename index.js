@@ -6,7 +6,7 @@ app.use(express.json());
 app.use(express.static(__dirname));
 
 const cohere = new CohereClient({
-    token: "PWg6VmjV38d0Qzlv7mEE1B8Skz0SFYsfk11UsMBJ", 
+    token: process.env.COHERE_API_KEY, // 
 });
 
 let chatHistory = [];
